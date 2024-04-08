@@ -1,36 +1,7 @@
 .appContainer{
     background-color: #eee;
-    height: 100%;
-    width: 100%;
-}
-
-.appBody{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    width: 100%;
-    text-align:center;
-}
-
-.card{
-    width: 31.5%;
-    margin: 0 auto 1% auto;
-}
-
-.filling-empty-space-childs {
-    height:0;
-}
-
-.description{
-    margin:0 2.5%;
-    width: 95%;
-    text-align: left;
-}
-
-.img{
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    height: auto;
+    width: auto;
 }
 
 mat-toolbar{

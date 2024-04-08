@@ -21,6 +21,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -45,7 +47,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatProgressBarModule,
     MatDialogModule,
     TextFieldModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatMenuModule,
+    MatCheckboxModule
   ],
   exports: [
     MatSidenavModule,
@@ -67,7 +71,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatProgressBarModule,
     MatDialogModule,
     TextFieldModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatMenuModule,
+    MatCheckboxModule
   ],
 })
 export class MaterialModule { }

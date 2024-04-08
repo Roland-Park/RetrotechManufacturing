@@ -1,20 +1,3 @@
 <div class="appContainer">
-  <mat-toolbar color="primary">{{title}}</mat-toolbar>
-  <div class="appBody">
-    <div class="card" *ngFor="let price of prices">
-      <mat-card>
-        <mat-card-header>{{price.name}}</mat-card-header>
-        <mat-card-content>
-          <img class="img" src=
-          "https://s3.amazonaws.com/speedhunters-wp-production/wp-content/uploads/2020/08/03071513/2020-Stanced-FB-Seattle_Trevor-Ryan-Speedhunters_054_5979-520x346.jpg"
-          >
-          <p class="description">{{price.description}}</p>
-          <button mat-raised-button color="primary">{{price.eaUsdCents / 100 | currency}}</button>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <div *ngFor="let filler of getNumberOfFillerCards()" class="filling-empty-space-childs card">
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>

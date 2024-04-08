@@ -1,0 +1,20 @@
+
+
+mat-toolbar{
+    margin: 0.5% auto 1% auto;
+    max-width: 99%;
+    border-radius: 1%;
+    text-align: center;
+}
+
+.h2{
+    margin: auto;
+}
+
+.filter{
+    width: auto;
+}
+
+.filters{
+    margin: 1%;
+}

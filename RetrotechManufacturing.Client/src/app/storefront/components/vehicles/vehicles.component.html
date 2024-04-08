@@ -1,0 +1,9 @@
+<mat-toolbar><h3>Vehicles</h3></mat-toolbar>
+<div *ngFor="let filter of filters">
+    <mat-checkbox
+        color="accent"
+        [checked]="filter.isSelected"
+        (change)="onChange($event, filter.id)">
+            {{filter.name}}
+    </mat-checkbox>
+</div>

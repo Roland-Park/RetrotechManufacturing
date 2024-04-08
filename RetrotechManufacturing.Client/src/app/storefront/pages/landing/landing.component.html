@@ -1,0 +1,31 @@
+
+<mat-sidenav-container>
+  <mat-sidenav
+        #drawer 
+        fixedInViewport
+        [mode]="'over'"
+        [opened]="false">
+        <div class="filters">
+          <div class="filter">
+            <categories [categories$]="categories$" (onCategoryFilterUpdated)="updateCategoryFilter($event)"></categories>
+          </div>
+          <div class="filter">
+            <vehicles [vehicles$]="vehicles$" (onVehicleFilterUpdated)="updateVehicleFilter($event)"></vehicles>
+          </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-container>
+      <mat-toolbar color="primary" class="sidenavLogo">
+        <button 
+          mat-icon-button 
+          color="accent" 
+          (click)="openDrawer(drawer)" 
+          matTooltip="Filter products">
+            <mat-icon *ngIf="!filtersExist()">filter_alt_off</mat-icon>
+            <mat-icon *ngIf="filtersExist()">filter_alt</mat-icon>
+          </button>
+        <h2 class="h2">Products</h2>
+      </mat-toolbar>
+      <price-list [prices$]="prices$"></price-list>
+    </mat-sidenav-container>
+</mat-sidenav-container>
