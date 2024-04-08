@@ -48,7 +48,7 @@ export class PriceService  extends BaseService{
             if(!desiredCategoryIds.length && desiredVehicleIds.length) return vehicleIntersection.length > 0;
             
             return categoryIntersection.length > 0 && vehicleIntersection.length > 0
-          })
+          }).sort((a,b) => (a.product.displayName > b.product.displayName) ? 1 : ((b.product.displayName > a.product.displayName) ? -1 : 0))
         );
         this.isLoadingSubject.next(false);
         this.endpoint = environment.priceEndpoint;

@@ -17,14 +17,22 @@
     <mat-sidenav-container>
       <mat-toolbar color="primary" class="sidenavLogo">
         <button 
-          mat-icon-button 
+          *ngIf="!filtersExist()"
+          mat-mini-fab 
           color="accent" 
           (click)="openDrawer(drawer)" 
-          matTooltip="Filter products">
+          matTooltip="No filters applied">
             <mat-icon *ngIf="!filtersExist()">filter_alt_off</mat-icon>
+        </button>
+        <button 
+          *ngIf="filtersExist()"
+          mat-mini-fab 
+          color="accent" 
+          (click)="openDrawer(drawer)" 
+          matTooltip="Update filters">
             <mat-icon *ngIf="filtersExist()">filter_alt</mat-icon>
-          </button>
-        <h2 class="h2">Products</h2>
+        </button>
+        <h2 class="h2">Shop</h2>
       </mat-toolbar>
       <price-list [prices$]="prices$"></price-list>
     </mat-sidenav-container>
