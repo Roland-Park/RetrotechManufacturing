@@ -7,4 +7,8 @@ public class Category : Entity
 {
     public string Name { get; set; }
     public virtual IEnumerable<Product> Products { get; set; }
+    /// <summary>
+    /// required for json serialization, not EF
+    /// </summary>
+    public long[] ProductIds { get; set; }
 }

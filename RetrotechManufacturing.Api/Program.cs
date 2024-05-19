@@ -1,12 +1,19 @@
+using RetrotechManufacturing.Api.BLL.Services;
+using RetrotechManufacturing.Api.BLL.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddTransient<ICategoryDeserializerService, CategoryDeserializerService>();
+builder.Services.AddTransient<IVehicleDeserializerService, VehicleDeserializerService>();
+builder.Services.AddTransient<IProductDeserializerService, ProductDeserializerService>();
+builder.Services.AddTransient<IProductGroupDeserializerService, ProductGroupDeserializerService>();
+builder.Services.AddTransient<IPriceDeserializerService, PriceDeserializerService>();
+builder.Services.AddTransient<IDimensionDeserializerService, DimensionDeserializerService>();
+builder.Services.AddTransient<IPictureDeserializerService, PictureDeserializerService>();
+builder.Services.AddTransient<IDeserializationOrchestrator, DeserializationOrchestrator>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 

@@ -45,4 +45,9 @@ public class Product : Entity
         }
     }
     public long ProductGroupId { get; set; }
+
+    /// <summary>
+    /// required for json serialization, not EF
+    /// </summary>
+    public long[] CategoryIds { get; set; }
 }
