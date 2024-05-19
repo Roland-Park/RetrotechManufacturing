@@ -10,4 +10,8 @@ public class Vehicle : Entity
     public string Year { get; set; }
     public virtual IEnumerable<ProductGroup> ProductGroups { get; set; }
     public string Name => $"{Year} {Make} {Model}";
+    /// <summary>
+    /// required for json serialization, not EF
+    /// </summary>
+    public long[] ProductGroupIds { get; set; }
 }

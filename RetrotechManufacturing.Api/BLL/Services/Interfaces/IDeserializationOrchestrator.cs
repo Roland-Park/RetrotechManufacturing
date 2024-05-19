@@ -7,7 +7,7 @@ namespace RetrotechManufacturing.Api.BLL.Services.Interfaces;
 public interface IDeserializationOrchestrator
 {
     List<Category> GetCategories(bool includeProducts = false);
-    List<Vehicle> GetVehicles(bool includeVehicles = false);
+    List<Vehicle> GetVehicles(bool includeProductGroups = false);
     List<Price> GetPricesForCategories(long[] categoryIds);
     List<Vehicle> GetPricesForVehicles(long[] vehicleIds);
 }
