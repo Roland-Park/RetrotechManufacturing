@@ -139,8 +139,17 @@ public class DeserializationOrchestrator : IDeserializationOrchestrator
 
         result.Prices = allPrices.Where(x => x.ProductId == result.Id);
         result.Pictures = allPictures.Where(x => result.PictureIds.Contains(x.Id));
+        EnrichPictureFilePaths(result);
 
         return result;
+    }
+
+    private void EnrichPictureFilePaths(Product product)
+    {
+        foreach(var picture in product.Pictures)
+        {
+            picture.Url = $"images/product{product.Id}/{picture.Url}";
+        }
     }
 
     private List<Product> GetProductsFromList(List<Product> allProducts, long[] productIds)
