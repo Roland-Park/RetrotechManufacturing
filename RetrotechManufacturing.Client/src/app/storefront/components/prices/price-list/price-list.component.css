@@ -27,3 +27,14 @@
     width: 100%;
     text-align:center;
 }
+
+@media only screen and (max-width: 750px){
+    .storeFrontBody{
+        display: block;
+    }
+
+    .card{
+        width: 95%;
+        margin: 0 auto 1% auto;
+    }
+}
