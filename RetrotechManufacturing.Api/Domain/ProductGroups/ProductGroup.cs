@@ -16,4 +16,8 @@ public class ProductGroup : Entity
     /// required for json serialization, not EF
     /// </summary>
     public long[] ProductIds { get; set; }
+    /// <summary>
+    /// required for json serialization, not EF
+    /// </summary>
+    public long[] VehicleIds { get; set; }
 }

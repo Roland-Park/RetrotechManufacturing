@@ -50,7 +50,7 @@ public abstract class BaseDataDeserializerService<T> : IBaseDataDeserializerServ
                 return vehicleSection;
             case "Dimension":
                 return dimensionSection;
-            case "picture":
+            case "Picture":
                 return pictureSection;
             default:
                 throw new Exception($"{typeName} does not have a data section and cannot be deserialized.");

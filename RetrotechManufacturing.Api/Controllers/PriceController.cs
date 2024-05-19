@@ -1,23 +1,23 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RetrotechManufacturing.Api.BLL.Services.Interfaces;
-using RetrotechManufacturing.Api.Domain.Products;
+using RetrotechManufacturing.Api.Domain.Prices;
 
 namespace RetrotechManufacturing.Api.Controllers;
 
 [Route("[controller]")]
 [ApiController]
-public class CategoryController : ControllerBase
+public class PriceController : ControllerBase
 {
     private readonly IDeserializationOrchestrator deserializer;
-    public CategoryController(IDeserializationOrchestrator deserializer)
+    public PriceController(IDeserializationOrchestrator deserializer)
     {
         this.deserializer = deserializer;
     }
 
     [HttpGet]
-    public ActionResult<List<Category>> GetCategories()
+    public ActionResult<List<Price>> GetAll()
     {
-        return Ok(deserializer.GetCategories(includeProducts: false));
+        return Ok(deserializer.GetPrices());
     }
 }

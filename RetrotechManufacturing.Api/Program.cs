@@ -13,6 +13,14 @@ builder.Services.AddTransient<IPictureDeserializerService, PictureDeserializerSe
 builder.Services.AddTransient<IDeserializationOrchestrator, DeserializationOrchestrator>();
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "CorsPolicy",
+        x => x.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
@@ -20,5 +28,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("CorsPolicy");
 
 app.Run();

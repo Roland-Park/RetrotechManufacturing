@@ -50,4 +50,9 @@ public class Product : Entity
     /// required for json serialization, not EF
     /// </summary>
     public long[] CategoryIds { get; set; }
+
+    /// <summary>
+    /// required for json serialization, not EF
+    /// </summary>
+    public long[] PictureIds { get; set; }
 }

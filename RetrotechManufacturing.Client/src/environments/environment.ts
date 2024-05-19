@@ -1,6 +1,6 @@
 export const environment ={
     production: false,
-    apiUrlRoot: "https://localhost:5001",
+    apiUrlRoot: "https://localhost:7076",
     categoryEndpoint:"category",
     priceEndpoint: "price",
     productGroupEndpoint: "productGroup",

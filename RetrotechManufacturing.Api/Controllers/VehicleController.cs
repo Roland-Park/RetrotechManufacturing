@@ -17,6 +17,6 @@ public class VehicleController : ControllerBase
     [HttpGet]
     public ActionResult<List<Category>> GetVehicles()
     {
-        return Ok(deserializer.GetVehicles(includeProductGroups: true));
+        return Ok(deserializer.GetVehicles(includeProductGroups: false));
     }
 }

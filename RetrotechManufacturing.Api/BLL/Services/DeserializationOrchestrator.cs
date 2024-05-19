@@ -59,14 +59,29 @@ public class DeserializationOrchestrator : IDeserializationOrchestrator
         return vehicles;
     }
 
-    public List<Price> GetPricesForCategories(long[] categoryIds)
+    public List<Price> GetPrices()
     {
-        throw new NotImplementedException();
-    }
+        var allPrices = priceDeserializer.DeserializeData();
+        var allProducts = productDeserializer.DeserializeData();
+        var allProductGroups = productGroupDeserializer.DeserializeData();
+        foreach (var price in allPrices)
+        {
+            price.Product = GetProductFromList(allProducts, price.ProductId);
+            price.Product.ProductGroup = GetProductGroupFromList(allProductGroups, price.Product.ProductGroupId);
+        }
 
-    public List<Vehicle> GetPricesForVehicles(long[] vehicleIds)
-    {
-        throw new NotImplementedException();
+        var allCategories = categoryDeserializer.DeserializeData();
+        var allVehicles = vehicleDeserializer.DeserializeData();
+        foreach(var price in allPrices)
+        {
+            foreach(var product in allProducts)
+            {
+                product.Categories = allCategories.Where(x => product.CategoryIds.Contains(x.Id));
+                product.ProductGroup.Vehicles = allVehicles.Where(x => product.ProductGroup.VehicleIds.Contains(x.Id));
+            }
+        }
+
+        return allPrices;
     }
 
     private List<Product> GetProductsById(long[] productIds)
@@ -117,11 +132,13 @@ public class DeserializationOrchestrator : IDeserializationOrchestrator
     private Product GetProductFromList(List<Product> allProducts, long productId)
     {
         var allPrices = priceDeserializer.DeserializeData();
+        var allPictures = pictureDeserializer.DeserializeData();
 
         var result = allProducts.FirstOrDefault(x => x.Id == productId);
         if (result == null) throw new Exception($"ProductGroup {productId} does not exist.");
 
         result.Prices = allPrices.Where(x => x.ProductId == result.Id);
+        result.Pictures = allPictures.Where(x => result.PictureIds.Contains(x.Id));
 
         return result;
     }
