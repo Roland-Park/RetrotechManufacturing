@@ -1,0 +1,6 @@
+<mat-chip-listbox hideSingleSelectionIndicator aria-label="Fish selection">
+    <mat-chip-option *ngIf="!product.isPhysical" selected color="accent" disabled>Virtual Product</mat-chip-option>
+    <mat-chip-option *ngIf="isUnfinishedCategory(product) && product.assemblyRequired" selected color="warn" disabled>Assembly Required</mat-chip-option>
+    <mat-chip-option *ngIf="isUnfinishedCategory(product)" selected color="primary" disabled>Surface Smoothing Required</mat-chip-option>
+    <mat-chip-option *ngIf="!isUnfinishedCategory(product) && product.isPhysical" disabled>Ready to Install</mat-chip-option>
+  </mat-chip-listbox>

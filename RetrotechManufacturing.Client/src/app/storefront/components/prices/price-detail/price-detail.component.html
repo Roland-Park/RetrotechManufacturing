@@ -1,9 +1,16 @@
 <div *ngIf="data" class="container" fxLayout fxLayoutAlign="center center">
     <mat-card class="content carousel">
         <carousel [pictures]="data.product.pictures"></carousel>
+        <div class="tags">
+            <product-tags class="pointer" [product]="data.product"></product-tags>
+        </div>
+
     </mat-card>
     <mat-card class="content">
         <mat-card-content>
+            <button class="close" matTooltip="close" (click)="back()" color="warn" mat-icon-button>
+                <mat-icon>close</mat-icon>
+            </button>
             <p>
                 <b>${{data.unitAmount / 100}} {{data.currency}}</b>
             </p>

@@ -17,5 +17,6 @@ export interface IProduct extends IEntity{
     instructionsLink: string | undefined;
     filePath: string | undefined;
     displayName: string;
-    isVirtual: boolean;
+    isPhysical: boolean;
+    assemblyRequired: boolean;
 }

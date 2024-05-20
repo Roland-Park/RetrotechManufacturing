@@ -76,6 +76,10 @@ public class DeserializationOrchestrator : IDeserializationOrchestrator
         {
             foreach(var product in allProducts)
             {
+                if (product.ProductGroup == null)
+                {
+                    throw new Exception($"Product {product.Id}: {product.DisplayName} may not have a price. ProductGroup {product.ProductGroupId} was not loaded.");
+                }
                 product.Categories = allCategories.Where(x => product.CategoryIds.Contains(x.Id));
                 product.ProductGroup.Vehicles = allVehicles.Where(x => product.ProductGroup.VehicleIds.Contains(x.Id));
             }

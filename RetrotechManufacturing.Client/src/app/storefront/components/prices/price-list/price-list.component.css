@@ -3,6 +3,10 @@
     margin: 0 auto 1% auto;
 }
 
+.tag{
+    border-radius: 40%;
+}
+
 .filling-empty-space-childs {
     height:0;
 }

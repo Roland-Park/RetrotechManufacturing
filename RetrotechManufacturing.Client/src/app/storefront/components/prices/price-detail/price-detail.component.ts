@@ -8,13 +8,13 @@ import { IPrice } from 'src/app/core/entities/prices/price';
   templateUrl: './price-detail.component.html',
   styleUrls: ['./price-detail.component.css']
 })
-export class PriceDetailComponent implements OnInit{
+export class PriceDetailComponent{
   constructor(public dialogRef: MatDialogRef<PriceDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IPrice){
 
   }
-  ngOnInit(): void {
-    console.log(this.data);
-    console.log(this.data.isPrimary);
+
+  back(): void{
+    this.dialogRef.close();
   }
 }

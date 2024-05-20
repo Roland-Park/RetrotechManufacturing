@@ -32,6 +32,7 @@ public class Product : Entity
     /// If the item isn't physical, FilePath should have a value.
     /// </summary>
     public bool IsPhysical { get; set; } = true;
+    public bool AssemblyRequired { get; set; }
     public string DisplayName
     {
         get

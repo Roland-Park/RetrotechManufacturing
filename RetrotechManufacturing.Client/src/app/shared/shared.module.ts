@@ -5,12 +5,14 @@ import { ErrorComponent } from './components/error/error.component';
 import { MaterialModule } from '../material/material.module';
 import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductTagsComponent } from './components/product-tags/product-tags.component';
 
 @NgModule({
   declarations: [
     CarouselComponent,
     ErrorComponent,
-    ContactComponent
+    ContactComponent,
+    ProductTagsComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [
     CarouselComponent,
     ErrorComponent,
-    ContactComponent
+    ContactComponent,
+    ProductTagsComponent
   ]
 })
 export class SharedModule { }

@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { IPrice } from 'src/app/core/entities/prices/price';
 import { MatDialog } from '@angular/material/dialog';
 import { PriceDetailComponent } from '../price-detail/price-detail.component';
+import { ThemePalette } from '@angular/material/core';
+import { IProduct } from 'src/app/core/entities/products/product';
 
 @Component({
   selector: 'price-list',

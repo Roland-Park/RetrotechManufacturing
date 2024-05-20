@@ -1,5 +1,11 @@
-.filler{
-    height:auto;
+.tags{
+    margin: auto;
+}
+
+.close{
+    float: right;
+    margin: 0;
+    padding: 0;
 }
 
 .contact{

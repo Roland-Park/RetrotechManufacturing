@@ -5,19 +5,19 @@
       (error)="handleMissingImage($event)"
     />
   <div class="controls {{displayControls()}}">
-      <button class="endControl" matTooltip="first" (click)="start()" mat-icon-button>
+      <button class="endControl" (click)="start()" mat-icon-button>
           <mat-icon>keyboard_double_arrow_left</mat-icon>
         </button>
-        <button class="control" matTooltip="next" (click)="decrement()" mat-icon-button>
+        <button class="control" (click)="decrement()" mat-icon-button>
           <mat-icon>keyboard_arrow_left</mat-icon>
         </button>
         <button class="control indexDisplay" disabled mat-button>
             {{index + 1}}/{{pictures.length}}
         </button>
-        <button class="control" matTooltip="previous" (click)="increment()" mat-icon-button>
+        <button class="control" (click)="increment()" mat-icon-button>
           <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
-        <button class="endControl" matTooltip="last" (click)="end()" mat-icon-button>
+        <button class="endControl" (click)="end()" mat-icon-button>
           <mat-icon>keyboard_double_arrow_right</mat-icon>
         </button>
   </div>

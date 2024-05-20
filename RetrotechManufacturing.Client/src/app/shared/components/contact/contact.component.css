@@ -6,7 +6,11 @@
 }
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width:auto;
     margin-bottom: 15%;
 } 
+.buttonText{
+    text-decoration: none;
+    color:#fff;
+}
