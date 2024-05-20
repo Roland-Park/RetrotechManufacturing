@@ -1,7 +1,17 @@
+.filler{
+    height:auto;
+}
+
 .contact{
     width: 75%;
     margin:auto;
+    display:flex;
+    flex-direction: column;
 }
+mat-card-header{
+    flex-shrink: 0;
+}
+
 mat-card{
     margin-left:auto;
     margin-right:auto;
@@ -9,6 +19,8 @@ mat-card{
 }
 
 mat-card-content{
+    flex-grow: 1;
+    overflow: auto;
     text-align: left;
     width: auto;
     height: auto;

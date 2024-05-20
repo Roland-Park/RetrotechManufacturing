@@ -1,15 +1,32 @@
-Get in touch to place an order!
+<div *ngIf="!isMiniVersion" class="words">
+    <h5>Get in touch to order!</h5>
+</div>
 <div class="container">
     <div class="contact">
-        <a target="blank" href={{ytLink}}>Youtube</a>
+        <a target="blank" href={{instaLink}}>
+            <button mat-icon-button>
+                <fa-icon class="icon" *ngIf="!isMiniVersion" animation="beat" size="2x" [icon]="faInstagram"></fa-icon>
+                <fa-icon class="icon" *ngIf="isMiniVersion" size="2x" [icon]="faInstagram"></fa-icon>
+            </button>
+        </a>
+        
+    </div>
+    <div class="contact">
+        <a target="blank" href={{ytLink}}>
+            <button mat-icon-button>
+                <fa-icon class="icon" *ngIf="!isMiniVersion" animation="beat" size="2x" [icon]="faYoutube"></fa-icon>
+                <fa-icon class="icon" *ngIf="isMiniVersion" size="2x" [icon]="faYoutube"></fa-icon>
+            </button>
+        </a>
 
     </div>
     <div class="contact">
-        <a target="blank" href={{instaLink}}>Instagram</a>
-
-    </div>
-    <div class="contact">
-        <a target="blank" href={{fbLink}}>Facebook</a>
+        <a target="blank" href={{fbLink}}>
+            <button mat-icon-button>
+                <fa-icon class="icon" *ngIf="!isMiniVersion" animation="beat" size="2x" [icon]="faFacebook"></fa-icon>
+                <fa-icon class="icon" *ngIf="isMiniVersion" size="2x" [icon]="faFacebook"></fa-icon>
+            </button>
+        </a>
 
     </div>
 </div>

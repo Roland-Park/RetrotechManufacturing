@@ -13,17 +13,16 @@
             <p>
                 {{data.product.color}}
                 {{data.product.material}}
-                <!-- {{data.product.}} -->
-                <!-- {{data.product.material}} -->
             </p>
             <p *ngIf="data.product.instructionsLink">
                 <a target="blank" href={{data.product.instructionsLink}}>Link to Instructions</a>
             </p>
+            <span class="filler"></span>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-footer>
             <div class="contact">
                 <contact></contact>
             </div>
-        </mat-card-actions>
+        </mat-card-footer>
     </mat-card>
 </div>

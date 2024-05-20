@@ -1,16 +1,12 @@
+.icon{
+    color: #ff4081;
+}
+.words{
+    margin-bottom:3%;
+}
 .container{
     display: flex;
     justify-content: space-between;
     width:auto;
-}
-
-.contact{
-    width: auto;
-    text-align: center;
-}
-
-@media(max-width: 375px){
-    .container{
-        display:block;
-    }
-}
+    margin-bottom: 15%;
+} 

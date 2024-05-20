@@ -1,4 +1,4 @@
-<div class="storeFrontBody">
+<div class="storeFrontBody" *ngIf="(prices$ | async)">
     <div class="card" *ngFor="let price of (prices$ | async)">
       <mat-card>
         <mat-card-header class="title pointer" (click)="openDialog(price)">{{price.product.displayName}}</mat-card-header>
@@ -14,3 +14,7 @@
     </div>
     <div *ngFor="let filler of getNumberOfFillerCards((prices$ | async))" class="filling-empty-space-childs card"></div>
   </div> 
+
+  <div class="storeFrontBody" *ngIf="!(prices$ | async) || ((prices$ | async)?.length) == 0">
+    <h2>No results found</h2>
+  </div>

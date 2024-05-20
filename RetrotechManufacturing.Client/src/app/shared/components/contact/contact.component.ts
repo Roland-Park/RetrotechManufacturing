@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { faFacebookSquare, faYoutubeSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'contact',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  @Input() isMiniVersion: boolean;
+  faFacebook = faFacebookSquare;
+  faYoutube = faYoutubeSquare;
+  faInstagram = faInstagram;
   fbLink: string = "https://www.facebook.com/retrotech.manufacturing/";
   instaLink: string = "https://www.instagram.com/thatrotaxcar/";
   ytLink: string = "https://www.youtube.com/@RetrotechCarParts";

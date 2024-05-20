@@ -4,6 +4,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MaterialModule } from '../material/material.module';
 import { ContactComponent } from './components/contact/contact.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FontAwesomeModule
   ],
   exports: [
     CarouselComponent,

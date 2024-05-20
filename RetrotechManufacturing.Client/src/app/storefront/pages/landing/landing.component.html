@@ -32,7 +32,10 @@
           matTooltip="Update filters">
             <mat-icon *ngIf="filtersExist()">filter_alt</mat-icon>
         </button>
-        <h2 class="h2">Rotax Manufacturing</h2>
+        <h2 class="h2">Retrotech Manufacturing</h2>
+        <div class="contact">
+          <contact [isMiniVersion]="true"></contact>
+        </div>
       </mat-toolbar>
       <price-list [prices$]="prices$"></price-list>
     </mat-sidenav-container>
