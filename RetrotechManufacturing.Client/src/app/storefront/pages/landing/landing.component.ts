@@ -22,7 +22,8 @@ export class LandingComponent implements OnInit{
   categories$: Observable<ICategory[]>;
   isLoading$: Observable<boolean>;
 
-  filter: { desiredVehicles: IVehicle[], desiredCategories: ICategory[] }
+  filter: { desiredVehicles: IVehicle[], desiredCategories: ICategory[] };
+  nameSearch: string | null;
   
   isHandset$: Observable<boolean> = this.breakpointObserver
   .observe([Breakpoints.XSmall, Breakpoints.Small])
@@ -70,11 +71,16 @@ export class LandingComponent implements OnInit{
     this.updateFilter();
   }
 
+  onSearchChange(shouldClear: boolean = false){
+    if(shouldClear) this.nameSearch = null;
+    this.updateFilter(); //todo: debounce
+  }
+
   updateFilter(){
-    this.priceService.loadPrices(this.vehicleIds, this.categoryIds);
+    this.priceService.loadPrices(this.vehicleIds, this.categoryIds, this.nameSearch);
   }
 
   filtersExist(): boolean{
-    return this.categoryIds.length > 0 || this.vehicleIds.length > 0
+    return this.categoryIds.length > 0 || this.vehicleIds.length > 0 || !!this.nameSearch;
   }
 }

@@ -22,7 +22,7 @@ export class PriceService  extends BaseService{
     super()
   }
   
-  loadPrices(desiredVehicleIds: number[] = [], desiredCategoryIds: number[] = []){
+  loadPrices(desiredVehicleIds: number[] = [], desiredCategoryIds: number[] = [], nameSearch: string | null = null){
     this.isLoadingSubject.next(true);
     return this.http.get<IPrice[]>(`${this.apiUrlRoot}/${this.endpoint}`, {
       headers: new HttpHeaders({
@@ -46,9 +46,13 @@ export class PriceService  extends BaseService{
 
             if(desiredCategoryIds.length && !desiredVehicleIds.length) return categoryIntersection.length > 0;
             if(!desiredCategoryIds.length && desiredVehicleIds.length) return vehicleIntersection.length > 0;
-            
-            return categoryIntersection.length > 0 && vehicleIntersection.length > 0
-          }).sort((a,b) => (a.product.displayName > b.product.displayName) ? 1 : ((b.product.displayName > a.product.displayName) ? -1 : 0))
+
+            return categoryIntersection.length > 0 && vehicleIntersection.length > 0;
+          })
+          .filter(x => nameSearch 
+            ? x.product.displayName.toLocaleLowerCase().includes(nameSearch?.toLocaleLowerCase())
+            : true)
+          .sort((a,b) => (a.product.displayName > b.product.displayName) ? 1 : ((b.product.displayName > a.product.displayName) ? -1 : 0))
         );
         this.isLoadingSubject.next(false);
         this.endpoint = environment.priceEndpoint;

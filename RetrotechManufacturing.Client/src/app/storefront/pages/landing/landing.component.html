@@ -12,6 +12,16 @@
           <div class="filter">
             <vehicles [vehicles$]="vehicles$" (onVehicleFilterUpdated)="updateVehicleFilter($event)"></vehicles>
           </div>
+          <div class="filter">
+            <mat-form-field>
+              <div>
+                <input matInput (keyup)="onSearchChange()" type="text" placeholder="Filter by name" [(ngModel)]="nameSearch">
+              </div>
+              <button *ngIf="nameSearch" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchChange(true)">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
         </div>
     </mat-sidenav>
     <mat-sidenav-container>
