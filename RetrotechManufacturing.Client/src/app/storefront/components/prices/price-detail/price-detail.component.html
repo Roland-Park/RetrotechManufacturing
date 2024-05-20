@@ -1,0 +1,30 @@
+<div *ngIf="data" class="container" fxLayout fxLayoutAlign="center center">
+    <mat-card class="content carousel">
+        <carousel [pictures]="data.product.pictures"></carousel>
+    </mat-card>
+    <mat-card class="content">
+        <mat-card-content>
+            <p>
+                <b>${{data.unitAmount / 100}} {{data.currency}}</b>
+            </p>
+            <p>
+                {{data.product.description}}
+            </p>
+            <p>
+                {{data.product.color}}
+                {{data.product.material}}
+                <!-- {{data.product.}} -->
+                <!-- {{data.product.material}} -->
+            </p>
+            <p *ngIf="data.product.instructionsLink">
+                <a target="blank" href={{data.product.instructionsLink}}>Link to Instructions</a>
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            Get in touch with me to purchase!
+            fb
+            insta
+            youtube
+        </mat-card-actions>
+    </mat-card>
+</div>

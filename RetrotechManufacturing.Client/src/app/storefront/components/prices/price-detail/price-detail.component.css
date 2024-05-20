@@ -1,0 +1,43 @@
+mat-card{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+mat-card-content{
+    text-align: left;
+    width: auto;
+    height: auto;
+}
+
+.content{
+    margin: 1%;
+}
+
+.container{
+    display: flex;
+}
+
+mat-card-actions{
+    text-align: center;
+    cursor:pointer;
+}
+
+.buttons{
+    margin: 1%;
+    margin-bottom: 3%;
+}
+
+@media only screen and (max-width: 775px){
+    .container{
+        display: block;
+    }
+
+    .carousel{
+        margin:1%;
+    }
+
+    mat-card{
+        width: 95%;
+    }
+}

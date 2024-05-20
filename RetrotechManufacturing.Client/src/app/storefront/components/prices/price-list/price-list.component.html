@@ -1,12 +1,14 @@
 <div class="storeFrontBody">
     <div class="card" *ngFor="let price of (prices$ | async)">
       <mat-card>
-        <mat-card-header class="title">{{price.product.displayName}}</mat-card-header>
+        <mat-card-header class="title pointer" (click)="openDialog(price)">{{price.product.displayName}}</mat-card-header>
         <mat-card-content>
-          <!-- <carousel [pictures]="price.product.pictures"></carousel> -->
           <carousel [pictures]="price.product.pictures"></carousel>
-          <p class="description">{{price.product.description}}</p>
-          <button mat-raised-button color="primary">{{price.unitAmount / 100 | currency}}</button>
+          <p class="description pointer" (click)="openDialog(price)">
+            {{price.product.description.substring(0,30)}}...
+            <button mat-button disabled>(more)</button>
+          </p>
+          <button class="pointer" mat-raised-button color="primary" (click)="openDialog(price)">{{price.unitAmount / 100 | currency}}</button>
         </mat-card-content>
       </mat-card>
     </div>

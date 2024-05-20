@@ -11,9 +11,9 @@
         <button class="control" matTooltip="next" (click)="decrement()" mat-icon-button>
           <mat-icon>keyboard_arrow_left</mat-icon>
         </button>
-        <div class="indexDisplay">
+        <button class="control indexDisplay" disabled mat-button>
             {{index + 1}}/{{pictures.length}}
-        </div>
+        </button>
         <button class="control" matTooltip="previous" (click)="increment()" mat-icon-button>
           <mat-icon>keyboard_arrow_right</mat-icon>
         </button>

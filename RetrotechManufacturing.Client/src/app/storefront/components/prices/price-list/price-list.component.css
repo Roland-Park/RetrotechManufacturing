@@ -28,7 +28,11 @@
     text-align:center;
 }
 
-@media only screen and (max-width: 750px){
+.pointer{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 775px){
     .storeFrontBody{
         display: block;
     }

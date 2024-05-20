@@ -9,13 +9,15 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { PriceListComponent } from './components/prices/price-list/price-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PriceDetailComponent } from './components/prices/price-detail/price-detail.component';
 
 @NgModule({
   declarations: [
     LandingComponent,
     VehiclesComponent,
     CategoriesComponent,
-    PriceListComponent
+    PriceListComponent,
+    PriceDetailComponent
   ],
   imports: [
     CommonModule,

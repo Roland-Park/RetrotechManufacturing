@@ -1,6 +1,6 @@
 
 .indexDisplay{
-    margin-top:4%;
+    margin-top:1%;
     font-weight: 900;
 }
   .slide {
@@ -12,7 +12,7 @@
 }
   
   .slide:hover {
-    transform: scale(1.025);
+    transform: scale(1.015);
   }
   
   .controls{
@@ -27,18 +27,9 @@
 
   @media(max-width: 615px){
     .controls{
-        justify-content: center;
-      }
-    .indexDisplay{
-        margin-top:6%;
+      justify-content: center;
     }
     .endControl{
-        display: none;
-    }
-}
-
-@media(max-width: 750px){
-    .indexDisplay{
-        margin-top:5%;
+      display: none;
     }
 }

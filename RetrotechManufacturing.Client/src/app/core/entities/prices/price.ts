@@ -4,6 +4,6 @@ import { IProduct } from "../products/product";
 export interface IPrice extends IEntity{
     unitAmount: number;
     currency: string;
-    primary: boolean;
+    isPrimary: boolean;
     product: IProduct;
 }
