@@ -49,9 +49,10 @@ export class PriceService  extends BaseService{
 
             return categoryIntersection.length > 0 && vehicleIntersection.length > 0;
           })
-          .filter(x => nameSearch 
-            ? x.product.displayName.toLocaleLowerCase().includes(nameSearch?.toLocaleLowerCase())
-            : true)
+          .filter(x =>
+            nameSearch 
+              ? x.product.productGroup.name.toLocaleLowerCase().includes(nameSearch?.toLocaleLowerCase())
+              : true)
           .sort((a,b) => (a.product.displayName > b.product.displayName) ? 1 : ((b.product.displayName > a.product.displayName) ? -1 : 0))
         );
         this.isLoadingSubject.next(false);
@@ -61,3 +62,5 @@ export class PriceService  extends BaseService{
     ).subscribe();
   }
 }
+
+
