@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width:auto;
+}
+
+.contact{
+    width: auto;
+    text-align: center;
+}
+
+@media(max-width: 375px){
+    .container{
+        display:block;
+    }
+}
