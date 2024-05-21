@@ -8,7 +8,6 @@ export const environment ={
     sponsorEndpoint: "sponsor",
     orderEndpoint: "order",
     cartEndpoint: "cart",
-    stripeClientSecret: "pk_test_51Im7dcBRlYq5mXNlw3eXmuJQRwVViGetYeZMBY4NYbaQ2qB2BCbRuIQWVaXqz9W9bo8cQCwZWJD57XMiYQckiAmr00ul3Keu2c",
     backupUrls: [
         "http://speedhunters-wp-production.s3.amazonaws.com/wp-content/uploads/2017/05/30005831/REunion-2017-1332-1200x800.jpg",
         "http://speedhunters-wp-production.s3.amazonaws.com/wp-content/uploads/2017/05/30005732/REunion-2017-1261-1200x800.jpg",

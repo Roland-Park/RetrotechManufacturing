@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 using RetrotechManufacturing.Api.BLL.Services;
 using RetrotechManufacturing.Api.BLL.Services.Interfaces;
 
@@ -25,11 +26,21 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+app.UseStaticFiles( new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(
+            Directory.GetCurrentDirectory(), 
+            "staticfiles"))
+    , RequestPath = "/staticfiles"
+});
+
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapFallbackToController("Index", "Fallback");
 
 app.UseCors("CorsPolicy");
-app.UseStaticFiles();
 
 app.Run();
