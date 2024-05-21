@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\staticfiles\images\product1\" />
-    <Folder Include="wwwroot\staticfiles\images\product2\" />
+    <Content Include="staticfiles\images\product3\testimg.jpg" />
+    <!--<Content Include="staticfiles\**" CopyToOutputDirectory="PreserveNewest" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="staticfiles\images\product1\" />
+    <Folder Include="staticfiles\images\product2\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
